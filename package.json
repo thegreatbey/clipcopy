@@ -1,0 +1,54 @@
+{
+  "name": "clipcopy",
+  "version": "0.0.1",
+  "description": "Tiny CLI clipboard history with search & recall.",
+  "bin": {
+    "clipcopy": "dist/cli.js"
+  },
+  "main": "dist/cli.js",
+  "type": "commonjs",
+  "files": [
+    "dist",
+    "LICENSE.md",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "postbuild": "node scripts/add-shebang.cjs",
+    "dev": "tsc -w",
+    "start": "node dist/cli.js --help",
+    "prepublishOnly": "npm run build",
+    "test": "jest"
+  },
+ "keywords": [
+  "clipboard",
+  "copy",
+  "paste",
+  "history",
+  "recall",
+  "clipboard-history",
+  "cli",
+  "command-line",
+  "terminal",
+  "developer-tools",
+  "cross-platform",
+  "windows",
+  "macos",
+  "linux"
+],
+  "author": "cavani21",
+  "license": "MIT",
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "clipboardy": "^4.0.0",
+    "commander": "^12.1.0"
+  },
+  "devDependencies": {
+    "@types/jest": "^30.0.0",
+    "jest": "^30.0.5",
+    "ts-jest": "^29.4.1",
+    "typescript": "^5.5.4"
+  }
+}
