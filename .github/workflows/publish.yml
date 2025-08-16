@@ -37,8 +37,17 @@ jobs:
       - name: Sanity check package contents
         run: npm pack --dry-run
 
+      - name: Skip if version already published
+        id: check
+        run: |
+          PKG=$(node -p "require('./package.json').name")
+          VER=$(node -p "require('./package.json').version")
+          PUB=$(npm view "$PKG" version || echo "0.0.0")
+          echo "local=$VER published=$PUB"
+          if [ "$VER" = "$PUB" ]; then echo "skip=true" >> $GITHUB_OUTPUT; fi
+
       - name: Publish package
-        if: ${{ github.event_name == 'push' && (startsWith(github.ref, 'refs/tags/v') || github.ref == 'refs/heads/main') }}
+        if: ${{ github.event_name == 'push' && startsWith(github.ref, 'refs/tags/v') && steps.check.outputs.skip != 'true' }}
         run: npm publish --access public --provenance
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
