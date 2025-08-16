@@ -1,6 +1,6 @@
 {
   "name": "clipcopy",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Tiny CLI clipboard history with search & recall.",
   "bin": {
     "clipcopy": "dist/cli.js"
