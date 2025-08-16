@@ -1,6 +1,6 @@
 {
   "name": "clipcopy",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Tiny CLI clipboard history with search & recall.",
   "bin": {
     "clipcopy": "dist/cli.js"
@@ -20,22 +20,22 @@
     "prepublishOnly": "npm run build",
     "test": "jest"
   },
- "keywords": [
-  "clipboard",
-  "copy",
-  "paste",
-  "history",
-  "recall",
-  "clipboard-history",
-  "cli",
-  "command-line",
-  "terminal",
-  "developer-tools",
-  "cross-platform",
-  "windows",
-  "macos",
-  "linux"
-],
+  "keywords": [
+    "clipboard",
+    "copy",
+    "paste",
+    "history",
+    "recall",
+    "clipboard-history",
+    "cli",
+    "command-line",
+    "terminal",
+    "developer-tools",
+    "cross-platform",
+    "windows",
+    "macos",
+    "linux"
+  ],
   "author": "cavani21",
   "license": "MIT",
   "engines": {
